@@ -1,15 +1,13 @@
 name: CatVodSpider_FongMi
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-  workflow_dispatch:
-  
+  watch:
+    types: started
+
 jobs:
   build:
 
     runs-on: windows-latest
+    if: github.event.repository.owner.id == github.event.sender.id
     
     steps:
   #  - uses: actions/checkout@v2
