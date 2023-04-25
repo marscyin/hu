@@ -1,6 +1,11 @@
 name: CatVodSpider_FongMi
-on: workflow_dispatch
-
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+  
 jobs:
   build:
 
@@ -11,7 +16,7 @@ jobs:
     - name: Clone source code
       run: |
         git clone --depth=1  https://github.com/yk1n0rt/CatVodSpider.git 
-        cd hu/CatVodSpider
+        cd D:/a/hu/hu
     - name: set up JDK 11
       uses: actions/setup-java@v2
       with:
